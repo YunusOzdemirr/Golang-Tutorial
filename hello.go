@@ -61,15 +61,23 @@ func basicArray() {
 	//numbers := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 	//fmt.Println(len(numbers))
 	//fmt.Println(len(colors))
-	for i := 0; i < len(colors)-1; i++ {
-		//	fmt.Println(colors[i])
-	}
-	// for i, value := range colors {
-	// 	fmt.Println(i, value)
+
+	// for i := 0; i < len(colors)-1; i++ {
+	// 	//	fmt.Println(colors[i])
 	// }
-	for _, value := range colors {
-		fmt.Println(value)
-	}
+	// // for i, value := range colors {
+	// // 	fmt.Println(i, value)
+	// // }
+	// for _, value := range colors {
+	// 	fmt.Println(value)
+	// }
+
+	colors = append(colors, "purple")
+	fmt.Println(colors)
+	colors = append(colors[0 : len(colors)-1])
+	fmt.Println(colors)
+	colors = append(colors[1:])
+	fmt.Println(colors)
 
 }
 
