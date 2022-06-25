@@ -11,8 +11,10 @@ func main() {
 	numbers := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}
 	channel := make(chan int)
 	go Sum(numbers, channel)
-	x := <-channel
+	go Sum(numbers[:len(numbers)/2], channel)
+	x, y := <-channel, <-channel
 	fmt.Println(x)
+	fmt.Println(y)
 }
 func Sum(numbers []int, c chan int) {
 	sum := 0
