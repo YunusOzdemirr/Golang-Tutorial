@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func main() {
+func main2() {
 	numbers := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}
 	channel := make(chan int)
 	go Sum(numbers, channel)
