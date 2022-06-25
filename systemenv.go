@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func main() {
+func main3() {
 	uName := os.Getenv("USER")
 	fmt.Println(uName)
 }
