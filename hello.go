@@ -2,36 +2,27 @@ package main
 
 import (
 	"fmt"
+	"runtime"
 	"strconv"
+	"time"
 )
 
-type Human struct {
-	FirstName string
-	LastName  string
-	Age       int
-}
-
-func NewHuman() *Human {
-	human := new(Human)
-	return human
-}
-
-var sayi = 5
-
 func main() {
-	// fmt.Println(add(5, 10))
-	// fmt.Println(multiple(5, 10))
-	// var message string = "Hi"
-	// PrintConsole(&message)
-	// fmt.Println(message)
-
-	// v := Vertext{Y: 3}
-	// a := &v
-	// fmt.Println(a)
-	// v.X = 010e9
-	// fmt.Println(v)
-	basicMap()
+	GoRoutines()
 }
+
+func GoRoutines() {
+	runtime.GOMAXPROCS(8)
+	go SayHello("Wassup")
+	SayHello("Hello")
+}
+func SayHello(s string) {
+	for i := 0; i < 5; i++ {
+		time.Sleep(100 * time.Millisecond)
+		go fmt.Println(s)
+	}
+}
+
 func basicMap() {
 	//KeyValuePair
 	states := make(map[string]string)
@@ -150,6 +141,30 @@ func multiple(x int, y int) int {
 func NewVertex() *Vertext {
 	h := new(Vertext)
 	return h
+}
+func VertextCreate() {
+	// fmt.Println(add(5, 10))
+	// fmt.Println(multiple(5, 10))
+	// var message string = "Hi"
+	// PrintConsole(&message)
+	// fmt.Println(message)
+
+	// v := Vertext{Y: 3}
+	// a := &v
+	// fmt.Println(a)
+	// v.X = 010e9
+	// fmt.Println(v)
+}
+
+type Human struct {
+	FirstName string
+	LastName  string
+	Age       int
+}
+
+func NewHuman() *Human {
+	human := new(Human)
+	return human
 }
 
 type Vertext struct {
