@@ -42,8 +42,22 @@ func main() {
 	// fmt.Println(a)
 	// v.X = 010e9
 	// fmt.Println(v)
-	basicArray()
+	basicMake()
 }
+func basicMake() {
+	var numbers = make([]int, 5, 5)
+	numbers[0] = 0
+	numbers[1] = 1
+	numbers[2] = 2
+	numbers[3] = 3
+	numbers[4] = 4
+	fmt.Println(numbers)
+	numbers = append(numbers, 232)
+	fmt.Println(numbers)
+	fmt.Println(cap(numbers))
+	fmt.Println(len(numbers))
+}
+
 func basicArray() {
 	// myArray := [3]int{}
 	// myArray[0] = 1
