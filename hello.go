@@ -18,18 +18,6 @@ func NewHuman() *Human {
 
 var sayi = 5
 
-func add(x int, y int, z string) int {
-	return x + y
-}
-
-func multiple(x int, y int) int {
-	return x * y
-}
-func NewVertex() *Vertext {
-	h := new(Vertext)
-	return h
-}
-
 func main() {
 	// fmt.Println(add(5, 10))
 	// fmt.Println(multiple(5, 10))
@@ -42,8 +30,36 @@ func main() {
 	// fmt.Println(a)
 	// v.X = 010e9
 	// fmt.Println(v)
-	basicMake()
+	basicMap()
 }
+func basicMap() {
+	//KeyValuePair
+	states := make(map[string]string)
+	states["ist"] = "istanbul"
+	states["ank"] = "ankara"
+	states["ant"] = "antalya"
+	fmt.Println(states)
+	//How to get value by key
+	antalya := states["ant"]
+	fmt.Println(antalya)
+	//How to delete value by key
+	delete(states, "ank")
+	fmt.Println(states)
+
+	// for k, v := range states {
+	// 	fmt.Println(k, v)
+	// }
+
+	keys := make([]string, len(states))
+	i := 0
+	for k, v := range states {
+		keys[i] = k + " " + v
+		i++
+	}
+	fmt.Println(keys)
+
+}
+
 func basicMake() {
 	var numbers = make([]int, 5, 5)
 	numbers[0] = 0
@@ -122,6 +138,18 @@ func PrintConsole(mess *string) {
 	// fmt.Println(mess)
 	var str = string(*mess)
 	fmt.Println(str)
+}
+
+func add(x int, y int, z string) int {
+	return x + y
+}
+
+func multiple(x int, y int) int {
+	return x * y
+}
+func NewVertex() *Vertext {
+	h := new(Vertext)
+	return h
 }
 
 type Vertext struct {
