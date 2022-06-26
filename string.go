@@ -25,7 +25,7 @@ const charsetUpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const charsetNumber = "01234567890"
 const chartsetSpecial = "!*-)(/&%+^"
 
-func main() {
+func mainPassword() {
 	password, err := GeneratePasswordStruct(Option{length: 10, upperCase: false, lowerCase: false, numbers: false, special: false})
 	if err != nil {
 		fmt.Println(err)
