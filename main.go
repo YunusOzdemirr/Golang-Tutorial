@@ -2,7 +2,6 @@ package main
 
 import (
 	"errors"
-	"fmt"
 	"log"
 	"os"
 )
@@ -13,7 +12,7 @@ var (
 	fileInfo *os.FileInfo
 )
 
-func main() {
+func main2() {
 	// newFile, err := os.Create("demo.txt")
 	// if err != nil {
 	// 	log.Fatal(err)
@@ -30,8 +29,9 @@ func main() {
 
 	// _, err := RenameFile("demo.txt", "./Zort/asd.txt")
 	// fmt.Println(err)
-	result, err := IsExist("./Zort/a2sd.txt")
-	fmt.Println(result, err)
+	//ChannelTest()
+	// result, err := IsExist("./Zort/a2sd.txt")
+	// fmt.Println(result, err)
 }
 func IsExist(path string) (string, error) {
 	fileInfo, err := os.Stat(path)
